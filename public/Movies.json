@@ -1,0 +1,179 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Iron Man",
+      "description": "Cuando el multimillonario industrial Tony Stark es secuestrado, construye un traje de alta tecnología para escapar y se convierte en el superhéroe Iron Man.",
+      "img": "/imgs/Iron-Man.jpeg",
+      "genre": ["Acción", "Aventura", "Ciencia Ficción"]
+    },
+    {
+      "id": 2,
+      "title": "Los Vengadores",
+      "description": "Nick Fury de S.H.I.E.L.D. reúne a un equipo de superhéroes para salvar el mundo de una invasión alienígena liderada por Loki.",
+      "img": "/imgs/Los-Vengadores.jpg",
+      "genre": ["Acción", "Aventura", "Ciencia Ficción"]
+    },
+    {
+      "id": 3,
+      "title": "Guardianes de la Galaxia",
+      "description": "Un grupo de criminales intergalácticos debe unirse para detener a un guerrero fanático con planes de purgar el universo.",
+      "img": "/imgs/Guardianes-de-la-galaxia.jpeg",
+      "genre": ["Acción", "Aventura", "Comedia", "Ciencia Ficción"]
+    },
+    {
+      "id": 4,
+      "title": "Black Panther",
+      "description": "T'Challa, el rey de Wakanda, debe dar un paso adelante para tomar su lugar como Black Panther y defender su reino de una nueva amenaza.",
+      "img": "/imgs/Black-Panter.jpeg",
+      "genre": ["Acción", "Aventura", "Drama"]
+    },
+    {
+      "id": 5,
+      "title": "Spider-Man: De Regreso a Casa",
+      "description": "Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar los desafíos de la escuela secundaria con su rol como Spider-Man.",
+      "img": "/imgs/Spiderman.jpeg",
+      "genre": ["Acción", "Aventura", "Comedia"]
+    },
+    {
+      "id": 6,
+      "title": "Doctor Strange",
+      "description": "Un renombrado neurocirujano emprende un viaje de curación solo para ser atraído al mundo de las artes místicas.",
+      "img": "/imgs/Doc.jpeg",
+      "genre": ["Acción", "Aventura", "Fantasía"]
+    },
+    {
+      "id": 7,
+      "title": "Thor: Ragnarok",
+      "description": "Thor se une a Hulk, el Dr. Strange y Valkyrie para detener a Hela, la diosa de la muerte, y salvar Asgard de la destrucción.",
+      "img": "/imgs/Thor-Ragnarok.jpeg",
+      "genre": ["Acción", "Aventura", "Comedia"]
+    },
+    {
+      "id": 8,
+      "title": "Capitán América: El Soldado de Invierno",
+      "description": "Steve Rogers se enfrenta a una conspiración dentro de S.H.I.E.L.D. y al misterioso Soldado de Invierno.",
+      "img": "/imgs/cap-america.jpg",
+      "genre": ["Acción", "Aventura", "Thriller"]
+    },
+    {
+      "id": 9,
+      "title": "Ant-Man",
+      "description": "Scott Lang, un ladrón con habilidades de tamaño reducido, debe ayudar a su mentor a proteger un traje que le da poderes especiales.",
+      "img": "/imgs/Ant-Mant.jpeg",
+      "genre": ["Acción", "Aventura", "Comedia"]
+    },
+    {
+      "id": 10,
+      "title": "Capitana Marvel",
+      "description": "Carol Danvers se convierte en una de las héroes más poderosos del universo después de ser expuesta a una tecnología alienígena.",
+      "img": "/imgs/Capitana-Marvel.jpeg",
+      "genre": ["Acción", "Aventura", "Ciencia Ficción"]
+    },
+    {
+      "id": 11,
+      "title": "Avengers: Infinity War",
+      "description": "Los Vengadores y sus aliados deben reunirse para derrotar a Thanos, quien busca recolectar todas las Gemas del Infinito.",
+      "img": "/imgs/av-infiniti-war.jpg",
+      "genre": ["Acción", "Aventura", "Ciencia Ficción"]
+    },
+    {
+      "id": 12,
+      "title": "Avengers: Endgame",
+      "description": "Después de los eventos de Infinity War, los Vengadores buscan una forma de revertir el daño causado por Thanos y restaurar el universo.",
+      "img": "/imgs/Endgame.jpeg",
+      "genre": ["Acción", "Aventura", "Ciencia Ficción"]
+    },
+    {
+      "id": 13,
+      "title": "Shang-Chi y la Leyenda de los Diez Anillos",
+      "description": "Shang-Chi debe enfrentarse a su pasado y a la organización secreta de los Diez Anillos que lo busca.",
+      "img": "/imgs/Sang-Chi.jpg",
+      "genre": ["Acción", "Aventura", "Fantasia"]
+    },
+    {
+      "id": 14,
+      "title": "Eternals",
+      "description": "Un grupo de seres inmortales conocidos como los Eternos se une para proteger a la humanidad de una amenaza antigua.",
+      "img": "/imgs/eternals.jpg",
+      "genre": ["Acción", "Aventura", "Fantasía"]
+    },
+    {
+      "id": 15,
+      "title": "Spider-Man: No Way Home",
+      "description": "Peter Parker debe enfrentarse a las consecuencias de revelar su identidad secreta y buscar ayuda para resolver un caos multiversal.",
+      "img": "/imgs/No-way-home.jpeg",
+      "genre": ["Acción", "Aventura", "Ciencia Ficción"]
+    },
+    {
+      "id": 16,
+      "title": "Parasite",
+      "description": "Una familia de clase baja se infiltra en la vida de una familia adinerada y las consecuencias que surgen de esa relación.",
+      "img": "/imgs/Parasite.jpeg",
+      "genre": ["Drama", "Thriller"]
+    },
+    {
+      "id": 17,
+      "title": "La Forma del Agua",
+      "description": "Una limpiadora muda desarrolla una relación amorosa con una criatura anfibia en un laboratorio secreto.",
+      "img": "/imgs/forma-agua.jpg",
+      "genre": ["Fantasía", "Drama", "Romance"]
+    },
+    {
+      "id": 18,
+      "title": "12 Años de Esclavitud",
+      "description": "La historia real de Solomon Northup, un hombre negro libre que es secuestrado y vendido como esclavo en el sur de los Estados Unidos.",
+      "img": "/imgs/12-anios.jpg",
+      "genre": ["Drama", "Histórico"]
+    },
+    {
+      "id": 19,
+      "title": "El Discurso del Rey",
+      "description": "El rey Jorge VI, con la ayuda de un terapeuta del habla, supera su tartamudeo para inspirar a su país durante la Segunda Guerra Mundial.",
+      "img": "/imgs/Discurso-Rey.jpeg",
+      "genre": ["Drama", "Histórico"]
+    },
+    {
+      "id": 20,
+      "title": "No Country for Old Men",
+      "description": "Un hombre encuentra una maleta llena de dinero y se convierte en el objetivo de un asesino implacable.",
+      "img": "/imgs/No-Country.jpeg",
+      "genre": ["Thriller", "Crime"]
+    },
+    {
+      "id": 21,
+      "title": "El Viaje de Chihiro",
+      "description": "Una niña se adentra en un mundo de espíritus y dioses después de que sus padres sean transformados en cerdos.",
+      "img": "/imgs/Viaje-Chihiro.jpeg",
+      "genre": ["Animación", "Fantasía"]
+    },
+    {
+      "id": 22,
+      "title": "The Artist",
+      "description": "Un actor de cine mudo lucha por adaptarse a la llegada del cine sonoro en la década de 1920.",
+      "img": "/imgs/The-Artist.jpeg",
+      "genre": ["Drama", "Romance"]
+    },
+    {
+      "id": 23,
+      "title": "The Departed",
+      "description": "Un policía encubierto en la mafia y un informante de la mafia en la policía están en una carrera para descubrir la identidad del otro.",
+      "img": "/imgs/Departed.jpg",
+      "genre": ["Crime", "Drama", "Thriller"]
+    },
+    {
+      "id": 24,
+      "title": "A Beautiful Mind",
+      "description": "La vida del prodigio matemático John Nash y su lucha contra la esquizofrenia mientras gana el Premio Nobel.",
+      "img": "/imgs/Beautiful-Mind.jpg",
+      "genre": ["Biography", "Drama"]
+    },
+    {
+      "id": 25,
+      "title": "The Silence of the Lambs",
+      "description": "Una joven cadete del FBI debe obtener la ayuda de un asesino encarcelado para atrapar a otro asesino en serie.",
+      "img": "/imgs/silenc.jpg",
+      "genre": ["Thriller", "Crime", "Drama"]
+    }
+  ]
+}
