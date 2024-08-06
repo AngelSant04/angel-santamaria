@@ -1,0 +1,53 @@
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+/* CLASE GLOBALES */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+/* GRID */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .col-sm-6 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-4 {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-xl-4 {
+    width: 33.33%;
+  }
+}

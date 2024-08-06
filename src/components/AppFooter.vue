@@ -27,13 +27,21 @@
     <div class="row footer_bottom">
       <p class="footer-text">
         Copyright &copy;
-        {{ year }}
+        {{ dProps.year }}
         Todos los derechos reservados
       </p>
     </div>
   </footer>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { defineProps } from 'vue';
+const dProps = defineProps({
+  year: {
+    type: Number,
+    required: true,
+  },
+});
+</script>
 <style>
 .footer_area {
   padding: 40px 0;

@@ -4,4 +4,5 @@ export interface Movie {
   description: string;
   img: string;
   genre: string[];
+  ageRestriction: string;
 }
