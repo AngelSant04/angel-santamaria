@@ -60,6 +60,7 @@ header {
   border: none;
   border-radius: 4px;
   padding: 4px 8px;
+  margin: 0;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s;

@@ -17,7 +17,7 @@
   </a>
 </template>
 <script setup lang="ts">
-import { computed, defineProps, onMounted, ref } from 'vue';
+import { computed, defineProps } from 'vue';
 import { Movie } from '@/interface/Movie';
 
 const dProps = defineProps({
