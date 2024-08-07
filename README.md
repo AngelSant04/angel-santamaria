@@ -1,37 +1,109 @@
-# angel-santamaria
+# Vue Prueba Técnica
 
-## Project setup
+Este repositorio contiene el proyecto de prueba técnica en Vue. La aplicación es una SPA (Single Page Application) que permite ver un listado de peliculas, consumida con axios al momento de la carga y filtrar por nombre, genero y descripción.
 
-```
-npm install
-```
+## Requisitos Previos
 
-### Compiles and hot-reloads for development
+Asegúrate de tener instalado lo siguiente:
 
-```
-npm run serve
-```
+- Node.js (versión 14 o superior)
+- npm (versión 6 o superior) o yarn (versión 1.22 o superior)
 
-### Compiles and minifies for production
+## Instalación
 
-```
-npm run build
-```
+Sigue los siguientes pasos para instalar y ejecutar el proyecto localmente:
 
-### Lints and fixes files
+1. **Clonar el repositorio:**
 
-```
-npm run lint
-```
+   ```bash
+   git clone https://github.com/AngelSant04/angel-santamaria.git
+   cd angel-santamaria
 
-### Customize configuration
+2. **Instalar Dependencias:**
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+ Usando npm:
 
-# angel-santamaria
+    ``` npm install
 
-El proyecto esta configurado con Prettier de acuerdo a como se me hacia mas comodo desarrollar, si en caso no compila con el npm run serve, compilar primero 
+ Usando yarn:
 
-npx prettier --write "src/**/*.{js,ts,vue,css,html}" 
+    ``` yarn install
 
-despues intentar con el npm run serve :D
+3. **Scripts Disponibles:**
+    En el directorio del proyecto, puedes ejecutar:
+
+    ``` npm run serve o yarn serve
+    
+    Ejecuta la aplicación en modo desarrollo.
+
+    ``` npm run build o yarn build
+    
+    Compila la aplicación para producción en la carpeta dist.
+    Empaqueta correctamente React en modo de producción y optimiza la compilación para obtener el mejor rendimiento.
+
+   ```npm run lint o yarn lint
+
+    Ejecuta ESLint para encontrar y arreglar problemas en el código.
+
+    ```npm run lint:fix o yarn lint:fix
+   
+    Ejecuta ESLint y trata de arreglar automáticamente los problemas encontrados en el código.
+
+    ```npm run format o yarn format
+   
+    Formatea el código utilizando Prettier.  
+    Este comando se aplica a todos los archivos del proyecto, asegurando un formato consistente.
+
+## Estructura del Proyecto:
+
+    ├── node_modules
+    ├── public
+    │   └── imgs (Carpeta de imagenes de las peliculas).
+    │   └── index.html
+    │   └── Movies.json
+    ├── src
+    │   ├── assets
+    │   │   └── styles
+    │   │       └── Styles.css
+    │   ├── components
+    │   │   ├── AppFooter.vue
+    │   │   ├── AppHeader.vue
+    │   │   ├── CardMovie.vue
+    │   ├── interface
+    │   │   └── Movie.ts
+    │   ├── router
+    │   │   └── index.ts
+    │   ├── store
+    │   │   └── index.ts
+    │   ├── views
+    │   │   ├── ErrorPage.vue
+    │   │   └── HomeView.vue
+    │   ├── App.vue
+    │   ├── main.ts
+    ├── .gitignore
+    ├── .prettierrc
+    ├── .babel.config.js
+    ├── package-lock.json
+    ├── package.json
+    ├── README.md
+    ├── tsconfig.json
+    └── .vue.config.js
+
+
+## Notas Adicionales:
+
+    Persistencia de Datos: La información del primary color se almacena en localStorage.
+    
+    API: La aplicación se conecta a una API(axios) para obtener caracteristicas de las peliculas.
+    
+    Responsividad: La aplicación es responsiva y se ajusta para verse correctamente en diferentes tamaños de pantalla.
+    
+
+## Problemas Comunes:
+
+    Error al ejecutar npm run serve: Asegúrate de ejecutar npm run format o yarn format para asegurar el formato consistente configurado en el proyecto.
+
+## Contribuciones:
+    Las contribuciones son bienvenidas. Por favor, abre un issue para discutir lo que te gustaría cambiar.
+
+
