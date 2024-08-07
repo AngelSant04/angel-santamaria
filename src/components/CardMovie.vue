@@ -17,7 +17,7 @@
   </a>
 </template>
 <script setup lang="ts">
-import { computed, defineProps } from 'vue';
+import { computed, defineProps, onMounted, ref } from 'vue';
 import { Movie } from '@/interface/Movie';
 
 const dProps = defineProps({
@@ -102,10 +102,17 @@ const generos = computed(() => {
   margin: 0;
   color: #4f4f4f;
   font-family: 'MockFlowFont';
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
   overflow: hidden;
   text-align: start;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9em;
+  margin-top: 0.5em;
 }
 </style>

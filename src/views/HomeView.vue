@@ -12,7 +12,7 @@
         <label class="filter-label">Genero:</label>
         <div class="select-box" :class="{ active: showOptions }">
           <div class="select-option" @click="showOptions = !showOptions">
-            <input type="text" :value="genreSelected.join(',')" readonly />
+            <input type="text" :value="selectedGenreText" readonly />
           </div>
           <div class="content">
             <div class="search">
@@ -93,6 +93,13 @@ const filteredMovies = computed(() => {
   return movies.value.filter((e: Movie) =>
     e.title.toLowerCase().includes(name.value.toLowerCase())
   );
+});
+
+const selectedGenreText = computed(() => {
+  if (genreSelected.value.length > 2) {
+    return `${genreSelected.value.length} items seleccionados`;
+  }
+  return genreSelected.value.join(',');
 });
 
 const searchMovies = () => {
