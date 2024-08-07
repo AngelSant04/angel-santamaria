@@ -29,3 +29,9 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # angel-santamaria
+
+El proyecto esta configurado con Prettier de acuerdo a como se me hacia mas comodo desarrollar, si en caso no compila con el npm run serve, compilar primero 
+
+npx prettier --write "src/**/*.{js,ts,vue,css,html}" 
+
+despues intentar con el npm run serve :D
