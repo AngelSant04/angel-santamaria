@@ -28,7 +28,7 @@
   </header>
 </template>
 <script setup lang="ts">
-import { defineEmits, defineProps, onMounted, ref } from 'vue';
+import { defineEmits, defineProps, onMounted } from 'vue';
 
 const dProps = defineProps({
   onMenu: {
@@ -38,8 +38,6 @@ const dProps = defineProps({
   },
 });
 const emit = defineEmits(['toggleMenu']);
-
-const colorPicker = ref('#007bff');
 
 const updateColor = (color: any) => {
   document.documentElement.style.setProperty('--primary-color', color);
