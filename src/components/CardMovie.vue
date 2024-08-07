@@ -1,5 +1,5 @@
 <template>
-  <a href="" class="card">
+  <a class="card">
     <img :src="dProps.movie?.img" class="imgCard" alt="" />
     <div class="cardOverlay">
       <div class="cardHeader">
@@ -89,18 +89,18 @@ const generos = computed(() => {
 .cardTitle {
   font-size: 1em;
   margin: 0 0 0.3em;
-  color: #6a515e;
+  color: #2c2328;
 }
 
 .cardGenre {
   font-size: 0.8em;
-  color: #d7bdca;
+  color: #363636;
 }
 
 .cardDescription {
   padding: 0.25em 2em 2em;
   margin: 0;
-  color: #d7bdca;
+  color: #4f4f4f;
   font-family: 'MockFlowFont';
   display: -webkit-box;
   -webkit-box-orient: vertical;

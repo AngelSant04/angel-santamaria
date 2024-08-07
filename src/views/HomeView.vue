@@ -1,41 +1,35 @@
 <template>
   <div>
-    <AppHeader :onMenu="menuVisible" @toggleMenu="toggleMenu"></AppHeader>
+    <AppHeader
+      class="fixed-header"
+      :onMenu="menuVisible"
+      @toggleMenu="toggleMenu"
+    ></AppHeader>
     <aside :class="{ 'menu-visible': menuVisible }">
       <h2 style="color: white; margin: 12px 20px">Filtros</h2>
       <hr class="filter-separetor" />
       <div class="filter-section">
+        <label class="filter-label">Genero:</label>
         <div class="select-box" :class="{ active: showOptions }">
           <div class="select-option" @click="showOptions = !showOptions">
-            <input type="text" id="optionSearch" placeholder="Search" name="" />
+            <input type="text" :value="genreSelected.join(',')" readonly />
           </div>
           <div class="content">
             <div class="search">
-              <input
-                type="text"
-                id="optionSearch"
-                placeholder="Search"
-                name=""
-              />
+              <input type="text" placeholder="Search" v-model="searchGenre" />
             </div>
             <ul class="options">
-              <li>HTML</li>
-              <li>CSS</li>
+              <li
+                v-for="genre in arrGenreComputed"
+                :key="genre"
+                @click="selectedGenre(genre)"
+                :class="{ selected: genreSelected.includes(genre) }"
+              >
+                {{ genre }}
+              </li>
             </ul>
           </div>
         </div>
-        <!-- <label for="genres" class="filter-label">Géneros:</label>
-        <select
-          id="genres"
-          class="filter-select"
-          v-model="genreSelected"
-          multiple
-        >
-          <option value="all">Todos</option>
-          <option v-for="genre in arrGenre" :key="genre" :value="genre">
-            {{ genre }}
-          </option>
-        </select> -->
       </div>
       <div class="filter-section">
         <label for="description" class="filter-label">Descripción:</label>
@@ -51,7 +45,7 @@
         <button class="filter-button" @click="searchMovies">Buscar</button>
       </div>
     </aside>
-    <main :class="{ shifted: menuVisible }">
+    <main>
       <div class="row">
         <div class="col flex justify-end">
           <input type="text" placeholder="Nombre" v-model="name" />
@@ -65,7 +59,7 @@
         </div>
       </div>
     </main>
-    <AppFooter :year="year" :class="{ shifted: menuVisible }"></AppFooter>
+    <AppFooter :year="year"></AppFooter>
   </div>
 </template>
 
@@ -81,12 +75,19 @@ const year = ref<number>(0);
 const movies = ref<Movie[]>([]);
 const moviesOriginal = ref<Movie[]>([]);
 const name = ref('');
-const genreSelected = ref<string[]>(['all']);
+const genreSelected = ref<string[]>(['Todos']);
 const description = ref('');
 const menuVisible = ref(false);
 const arrGenre: any = ref(null);
-
 const showOptions = ref(false);
+const searchGenre = ref('');
+
+const arrGenreComputed = computed(() => {
+  if (!arrGenre.value) return;
+  return arrGenre.value.filter((e: string) =>
+    e.toLowerCase().includes(searchGenre.value.toLowerCase())
+  );
+});
 
 const filteredMovies = computed(() => {
   return movies.value.filter((e: Movie) =>
@@ -98,12 +99,11 @@ const searchMovies = () => {
   if (description.value === '' && genreSelected.value.length === 0) {
     movies.value = [...moviesOriginal.value];
   } else {
-    let filteredMovies =
-      genreSelected.value.length === 0 || genreSelected.value.includes('all')
-        ? [...moviesOriginal.value]
-        : moviesOriginal.value.filter((e: Movie) =>
-            e.genre.some((g: string) => genreSelected.value.includes(g))
-          );
+    let filteredMovies = genreSelected.value.includes('Todos')
+      ? [...moviesOriginal.value]
+      : moviesOriginal.value.filter((e: Movie) =>
+          e.genre.some((g: string) => genreSelected.value.includes(g))
+        );
 
     if (description.value !== '') {
       filteredMovies = filteredMovies.filter((movie: Movie) =>
@@ -118,12 +118,32 @@ const searchMovies = () => {
   toggleMenu();
 };
 
+const selectedGenre = (genre: string) => {
+  if (genre === 'Todos') {
+    genreSelected.value = ['Todos'];
+  } else {
+    const index = genreSelected.value.indexOf(genre);
+    if (index === -1) {
+      genreSelected.value.push(genre);
+      genreSelected.value = genreSelected.value.filter(
+        (g: any) => g !== 'Todos'
+      );
+    } else {
+      genreSelected.value.splice(index, 1);
+      if (genreSelected.value.length === 0) {
+        genreSelected.value = ['Todos'];
+      }
+    }
+  }
+};
+
 const toggleMenu = () => {
   menuVisible.value = !menuVisible.value;
 };
 
 const loadGenres = async () => {
   const setGenres = new Set();
+  setGenres.add('Todos');
   movies.value.forEach((movie: Movie) => {
     movie.genre.forEach((g) => setGenres.add(g));
   });
@@ -148,6 +168,20 @@ onMounted(async () => {
 });
 </script>
 <style scoped>
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: #007bff;
+}
+
+main {
+  margin-top: 45px;
+  margin-bottom: 35px;
+}
+
 .row input[type='text'] {
   border: none;
   border-bottom: 1px solid #333;
@@ -181,10 +215,6 @@ aside {
   left: 0;
 }
 
-main {
-  transition: margin-left 0.3s ease;
-}
-
 AppFooter {
   transition: margin-left 0.3s ease;
 }
@@ -210,7 +240,7 @@ AppFooter {
 }
 
 .select-box {
-  width: 100%;
+  width: 95%;
 }
 
 .select-option {
@@ -223,20 +253,21 @@ AppFooter {
   color: #000;
   border-radius: 7px;
   cursor: pointer;
-  font-size: 22px;
+  /* font-size: 22px; */
+  padding: 8px 5px;
   border: 0 !important;
   outline: 0 !important;
 }
 
 .select-option::after {
   content: '';
-  border-top: 12px solid #000;
+  border-top: 10px solid #000;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   position: absolute;
-  right: 15px;
+  right: 10px;
   top: 50%;
-  margin-top: -8px;
+  margin-top: -6px;
 }
 
 .content {
@@ -244,17 +275,14 @@ AppFooter {
   position: absolute;
   color: #000;
   border-radius: 7px;
-  margin-top: 15px;
-  width: 100%;
+  margin-top: 1px;
   z-index: 999;
-  padding: 20px;
+  padding: 15px 8px;
   display: none;
 }
 
 .search input {
-  width: 100%;
-  font-size: 17px;
-  padding: 15px;
+  padding: 10px;
   outline: 0;
   border: 1px solid #b3b3b3;
   border-radius: 5px;
@@ -268,9 +296,8 @@ AppFooter {
 }
 
 .options li {
-  padding: 10px 15px;
+  padding: 10px 0px;
   border-radius: 5px;
-  font-size: 21px;
   cursor: pointer;
   border-bottom: 1px solid gray;
 }
@@ -279,11 +306,19 @@ AppFooter {
   background-color: #f2f2f2;
 }
 
+.options li.selected {
+  background-color: #007bff;
+  color: white;
+}
+
 .select-box.active .content {
   display: block;
 }
 
-.filter-select,
+.select-box.active .select-option::after {
+  transform: rotate(-180deg);
+}
+
 .filter-text-area {
   width: 100%;
   padding: 8px;
@@ -298,7 +333,6 @@ AppFooter {
   resize: none;
 }
 
-.filter-select:focus,
 .filter-text-area:focus {
   outline: none;
   border-color: #007bff;
