@@ -54,7 +54,7 @@ const toggleMenu = () => {
 };
 
 onMounted(() => {
-  const savedColor = localStorage.getItem('mainColor');
+  const savedColor = localStorage.getItem('mainColor') || '#007bff';
   if (savedColor) {
     document.documentElement.style.setProperty('--primary-color', savedColor);
     const colorPicker = document.querySelector(
