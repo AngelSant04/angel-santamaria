@@ -101,7 +101,8 @@ Sigue los siguientes pasos para instalar y ejecutar el proyecto localmente:
 
 ## Problemas Comunes:
 
-    Error al ejecutar npm run serve: Asegúrate de ejecutar npm run format o yarn format para asegurar el formato consistente configurado en el proyecto.
+    Error al ejecutar npm run serve: Asegúrate de ejecutar npm run format o yarn format 
+    para asegurar el formato consistente configurado en el proyecto.
 
 ## Contribuciones:
     Las contribuciones son bienvenidas. Por favor, abre un issue para discutir lo que te gustaría cambiar.
