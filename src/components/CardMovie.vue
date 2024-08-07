@@ -67,6 +67,7 @@ const generos = computed(() => {
 }
 
 .cardHeader {
+  height: 50px;
   position: relative;
   display: flex;
   align-items: center;
