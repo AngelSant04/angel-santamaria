@@ -181,7 +181,6 @@ onMounted(async () => {
   left: 0;
   width: 100%;
   z-index: 2;
-  background-color: #007bff;
 }
 
 main {
@@ -203,7 +202,7 @@ main {
 }
 
 .row input[type='text']:focus {
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 aside {
@@ -212,7 +211,7 @@ aside {
   left: -220px;
   width: 220px;
   height: 100%;
-  background-color: #007bff;
+  background-color: var(--primary-color);
   transition: left 0.3s ease;
   z-index: 2;
 }
@@ -268,7 +267,7 @@ AppFooter {
 
 .select-option::after {
   content: '';
-  border-top: 10px solid #000;
+  border-top: 10px solid var(--primary-color);
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   position: absolute;
@@ -314,7 +313,7 @@ AppFooter {
 }
 
 .options li.selected {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: white;
 }
 
@@ -329,7 +328,6 @@ AppFooter {
 .filter-text-area {
   width: 100%;
   padding: 8px;
-  border: 1px solid #007bff;
   border-radius: 4px;
   background-color: white;
   color: black;
@@ -342,7 +340,7 @@ AppFooter {
 
 .filter-text-area:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: white;
 }
 
 .filter-button {

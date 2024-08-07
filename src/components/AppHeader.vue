@@ -1,21 +1,35 @@
 <template>
   <header>
-    <div class="header-content" :class="{ shifted: dProps.onMenu }">
-      <button class="menu-button" @click="toggleMenu">
-        <font-awesome-icon :icon="['fas', 'bars']" />
-      </button>
-      <a
-        href="https://angelsant04.github.io/angel-dev/"
-        class="header-title"
-        target="_blank"
-      >
-        Angel Dev
-      </a>
+    <div
+      class="header-content flex justify-between"
+      :class="{ shifted: dProps.onMenu }"
+    >
+      <div class="flex">
+        <button class="menu-button" @click="toggleMenu">
+          <font-awesome-icon :icon="['fas', 'bars']" />
+        </button>
+        <a
+          href="https://angelsant04.github.io/angel-dev/"
+          class="header-title"
+          target="_blank"
+        >
+          Angel Dev
+        </a>
+      </div>
+      <div class="flex justify-center align-center" style="margin-right: 40px">
+        <input
+          type="color"
+          id="colorPicker"
+          class="color-picker"
+          @input="changeColor"
+        />
+      </div>
     </div>
   </header>
 </template>
 <script setup lang="ts">
-import { defineEmits, defineProps } from 'vue';
+import { defineEmits, defineProps, onMounted, ref } from 'vue';
+
 const dProps = defineProps({
   onMenu: {
     type: Boolean,
@@ -23,15 +37,40 @@ const dProps = defineProps({
     default: false,
   },
 });
-
 const emit = defineEmits(['toggleMenu']);
+
+const colorPicker = ref('#007bff');
+
+const updateColor = (color: any) => {
+  document.documentElement.style.setProperty('--primary-color', color);
+  localStorage.setItem('mainColor', color);
+};
+
+const changeColor = (event: Event) => {
+  const input = event.target as HTMLInputElement;
+  updateColor(input.value);
+};
+
 const toggleMenu = () => {
   emit('toggleMenu');
 };
+
+onMounted(() => {
+  const savedColor = localStorage.getItem('mainColor');
+  if (savedColor) {
+    document.documentElement.style.setProperty('--primary-color', savedColor);
+    const colorPicker = document.querySelector(
+      '#colorPicker'
+    ) as HTMLInputElement;
+    if (colorPicker) {
+      colorPicker.value = savedColor;
+    }
+  }
+});
 </script>
 <style lang="css">
 header {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: white;
   padding: 10px 20px;
   display: flex;
@@ -40,7 +79,7 @@ header {
 }
 
 .header-content {
-  display: flex;
+  width: 100%;
   transition: margin-left 0.3s ease;
 }
 
@@ -68,7 +107,7 @@ header {
 
 .menu-button:hover {
   background-color: #e7e7e7;
-  color: #007bff;
+  color: var(--primary-color);
 }
 
 .shifted {

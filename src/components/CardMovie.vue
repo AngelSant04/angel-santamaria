@@ -106,14 +106,4 @@ const generos = computed(() => {
   overflow: hidden;
   text-align: start;
 }
-
-button {
-  background-color: transparent;
-  border: none;
-  color: #007bff;
-  cursor: pointer;
-  padding: 0;
-  font-size: 0.9em;
-  margin-top: 0.5em;
-}
 </style>

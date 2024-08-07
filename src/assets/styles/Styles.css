@@ -1,4 +1,5 @@
 :root {
+  --primary-color: #007bff;
   --surface-color: #fff;
   --curve: 40;
 }
@@ -15,9 +16,14 @@
   justify-content: flex-end;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .align-center {
   align-items: center;
 }
+
 /* GRID */
 .row {
   display: flex;
